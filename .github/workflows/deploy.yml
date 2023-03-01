@@ -10,6 +10,9 @@ on:
       - develop
       - staging
 
+  release:
+    types: [published]
+
 permissions:
   packages: write
   repository-projects: read
@@ -23,7 +26,6 @@ jobs:
     env:
       IMAGE_TAG: ${{ github.ref_name }}
       DOCKER_REPOSITORY: ghcr.io
-      BASE_URL: https://help-to-heat-${{ github.ref_name }}.london.cloudapps.digital
 
     steps:
       - uses: actions/checkout@v3
@@ -45,7 +47,7 @@ jobs:
           DOCKER_IMAGE: help-to-heat
 
         run: |
-          docker build . --file $DOCKER_FILE --tag $DOCKER_REPOSITORY/${{ github.repository_owner }}/$DOCKER_IMAGE:$IMAGE_TAG --build-arg BASE_URL=$BASE_URL
+          docker build . --file $DOCKER_FILE --tag $DOCKER_REPOSITORY/${{ github.repository_owner }}/$DOCKER_IMAGE:$IMAGE_TAG
           docker push -a $DOCKER_REPOSITORY/${{ github.repository_owner }}/$DOCKER_IMAGE
 
   deploy_help-to-heat_image:
@@ -101,15 +103,15 @@ jobs:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: CF_DOCKER_PASSWORD="$PAT_TOKEN" ./cf push -f manifests/"$CF_SPACE"/help-to-heat_manifest.yml --docker-image $DOCKER_REPOSITORY/${{ github.repository_owner }}/$DOCKER_IMAGE:$IMAGE_TAG --docker-username=$PAT_TOKEN_USER
 
-      # - uses: actions/checkout@v2
-      # - name: Slack Notification
-      #   continue-on-error: true
-      #   if: ${{ failure() && github.ref_name == 'prod' || failure() && github.ref_name == 'develop' }}
-      #   uses: rtCamp/action-slack-notify@v2
-      #   env:
-      #     SLACK_COLOR: '#FF0000'
-      #     SLACK_ICON: https://avatars0.githubusercontent.com/u/818058?s=200&v=4
-      #     SLACK_TITLE: '${{ github.ref_name }} deployment ${{ job.status }} :warning:'
-      #     SLACK_USERNAME: ${{ github.actor }}
-      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      #     SLACK_MESSAGE: '${{ github.ref_name }} Action ${{ job.status }}'
+      - uses: actions/checkout@v2
+      - name: Slack Notification
+        continue-on-error: true
+        if: ${{ failure() && github.ref_name == 'prod' || failure() && github.ref_name == 'develop' }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_COLOR: '#FF0000'
+          SLACK_ICON: https://avatars0.githubusercontent.com/u/818058?s=200&v=4
+          SLACK_TITLE: '${{ github.ref_name }} deployment ${{ job.status }} :warning:'
+          SLACK_USERNAME: ${{ github.actor }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: '${{ github.ref_name }} Action ${{ job.status }}'
