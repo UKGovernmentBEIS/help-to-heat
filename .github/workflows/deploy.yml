@@ -23,7 +23,7 @@ jobs:
     env:
       IMAGE_TAG: ${{ github.ref_name }}
       DOCKER_REPOSITORY: ghcr.io
-      PORTAL_URL: http://help-to-heat-portal-${{ github.ref_name }}.apps.internal
+      PORTAL_URL: http://help-to-heat-portal-${{ github.ref_name }}.apps.internal:8012
 
     strategy:
       matrix:
@@ -39,7 +39,7 @@ jobs:
 
       - name: Setup prod api host
         if:  ${{ github.event_name == 'release' }}
-        run: echo "PORTAL_URL=http://help-to-heat-portal.apps.internal" >> $GITHUB_ENV
+        run: echo "PORTAL_URL=http://help-to-heat-portal.apps.internal:8012" >> $GITHUB_ENV
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
