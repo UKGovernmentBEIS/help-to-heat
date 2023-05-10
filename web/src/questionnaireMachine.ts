@@ -27,7 +27,10 @@ import {
   EpcRatingType
 } from './types'
 
-export type GO_TO_QUESTION_TYPE = 'GO_TO_PROPERTY_LOCATION'
+export type GO_TO_QUESTION_TYPE =
+  | 'GO_TO_ENERGY_SUPPLIER'
+  | 'GO_TO_LANDLORD_PERMISSIONS'
+  | 'GO_TO_PERSONAL_DETAILS'
 
 const supportedCountry = (_context: unknown, event: { payload: string }) => {
   return ['England', 'Wales'].includes(event.payload)
@@ -183,7 +186,9 @@ export const questionnaireMachine = createMachine(
         | { type: 'PREVIOUS'; duration: number }
         | { type: 'CREATE_LEAD' }
         | { type: 'CONTINUE' }
-        | { type: 'GO_TO_PROPERTY_LOCATION' }
+        | { type: 'GO_TO_ENERGY_SUPPLIER' }
+        | { type: 'GO_TO_LANDLORD_PERMISSIONS' }
+        | { type: 'GO_TO_PERSONAL_DETAILS' }
     },
     id: 'form',
     initial: 'property_location',
@@ -701,8 +706,14 @@ export const questionnaireMachine = createMachine(
           CONTINUE: {
             target: 'list_of_elegible_schemes'
           },
-          GO_TO_PROPERTY_LOCATION: {
-            target: 'property_location'
+          GO_TO_ENERGY_SUPPLIER: {
+            target: 'choose_supplier'
+          },
+          GO_TO_PERSONAL_DETAILS: {
+            target: 'personal_and_contact_details'
+          },
+          GO_TO_LANDLORD_PERMISSIONS: {
+            target: 'landlord_permission'
           }
         }
       },
