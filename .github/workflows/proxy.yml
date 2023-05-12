@@ -14,7 +14,7 @@ on:
       - temp
       - demo
       - sandbox
-      - pentest
+      - testing
       - develop
       - prod
 
