@@ -11,7 +11,7 @@ on:
       - 'bugfix/**'
       - 'hotfix/**'
       - 'develop'
-      - 'testing'
+      - 'suppliers'
       - 'sandbox'
       - 'staging'
 
