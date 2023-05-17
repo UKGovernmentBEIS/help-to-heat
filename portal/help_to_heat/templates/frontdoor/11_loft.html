@@ -1,0 +1,42 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{csrf_input}}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Does this property have a loft?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="loft" name="loft" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="loft">
+                Yes
+              </label>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="loft-2" name="loft" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="loft-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

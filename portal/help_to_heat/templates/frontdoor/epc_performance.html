@@ -1,0 +1,71 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">About your energy performance certificate (EPC)</h1>
+    <form method="POST">
+      {{csrf_input}}
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="epc-rating">
+          What is the EPC rating?
+        </label>
+        <select class="govuk-select" id="epc-rating" name="epc-rating">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+          <option value="G">G</option>
+        </select>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group">
+          <label class="govuk-label" for="assessment-date">
+            What is the date of assessment?
+          </label>
+
+          <div class=" govuk-date-input" id="assessment-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="assessment-date-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="assessment-date-day"
+                  name="assessment-date-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="assessment-date-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="assessment-date-month"
+                  name="assessment-date-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="assessment-date-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="assessment-date-year"
+                  name="assessment-date-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

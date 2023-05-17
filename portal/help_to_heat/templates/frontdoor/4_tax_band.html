@@ -1,0 +1,48 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{csrf_input}}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is the council tax band of your property?
+            </h1>
+
+          </legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="subject">
+              Select your council tax band from the list below
+            </label>
+            <div id="subject-hint" class="govuk-hint">
+              <a href="https://www.gov.uk/council-tax-bands" class="govuk-link">If you're unsure, you can check your
+                property's council tax band</a>.
+            </div>
+            <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+              <option value="choose" selected>Please select...</option>
+              <option value="a">A</option>
+              <option value="b">B</option>
+              <option value="c">C</option>
+              <option value="d">D</option>
+              <option value="e">E</option>
+              <option value="f">F</option>
+              <option value="g">G</option>
+              <option value="h">H</option>
+
+            </select>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

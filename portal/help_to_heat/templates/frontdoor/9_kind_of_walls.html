@@ -1,0 +1,103 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{csrf_input}}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What kind of walls does your property have?
+            </h1>
+          </legend>
+          <p class="govuk-body">Solid walls may be made from brick or stone. If your home was built before 1930, it’s
+            likely to have solid walls.
+          </p>
+
+          <p class="govuk-body">You may have both types. For example, you have a pre-1930 home with an extension built
+            later than 1930.
+          </p>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Help me choose which wall type I have
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+
+              <p class="govuk-body">Solid brick walls will have an alternating pattern, with some bricks laid across the
+                wall so you can see the smaller ends from the outside.</p>
+
+              <p class="govuk-body">If your home has cavity walls, the bricks typically have an even pattern with all
+                bricks laid lengthways.</p>
+
+              <p class="govuk-body"> If the brickwork has been covered, you may be able to tell by measuring the width
+                of the wall. Measure the depth of the
+                wall by a window or door on one of your external walls.</p>
+
+              <p class="govuk-body">If a brick wall is more than 260mm thick, then it is probably a cavity wall.</p>
+
+              <p class="govuk-body">A narrower wall is probably a solid wall. Stone walls may be thicker still but are
+                usually solid.</p>
+
+            </div>
+          </details>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="kind-of-walls" name="kind-of-walls" type="radio"
+                value="solid-walls">
+              <label class="govuk-label govuk-radios__label" for="kind-of-walls">
+                Solid walls
+              </label>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="kind-of-walls-2" name="kind-of-walls" type="radio"
+                value="cavity-walls">
+              <label class="govuk-label govuk-radios__label" for="kind-of-walls-2">
+                Cavity walls
+              </label>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="kind-of-walls-3" name="kind-of-walls" type="radio"
+                value="mix-of-solid-and-cavity-walls">
+              <label class="govuk-label govuk-radios__label" for="kind-of-walls-3">
+                Mix of solid and cavity walls
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="kind-of-walls-3" name="kind-of-walls" type="radio"
+                value="option-not-listed">
+              <label class="govuk-label govuk-radios__label" for="kind-of-walls-3">
+                I don't see my option listed
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="kind-of-walls-3" name="kind-of-walls" type="radio"
+                value="i-dont-know">
+              <label class="govuk-label govuk-radios__label" for="kind-of-walls-3">
+                I don't know
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{csrf_input}}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What kind of house do you have?
+            </h1>
+          </legend>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Why do we need to know this?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">Energy use varies between different buildings, particularly for heating.</p>
+              <p class="govuk-body">Some home improvements are only possible or appropriate for certain buildings.</p>
+            </div>
+          </details>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="property-type-house" name="property-type-house" type="radio"
+                value="detached">
+              <label class="govuk-label govuk-radios__label" for="property-type-house">
+                Detached
+              </label>
+              <div id="property-type-house-hint" class="govuk-hint govuk-radios__hint">
+                Does not share any of its walls with another house or building
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="property-type-house-2" name="property-type-house" type="radio"
+                value="Semi-detached">
+              <label class="govuk-label govuk-radios__label" for="property-type-house-2">
+                Semi-detached
+              </label>
+              <div id="property-type-house-2-hint" class="govuk-hint govuk-radios__hint">
+                Is attached to one other house or building
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="property-type-house-3" name="property-type-house" type="radio"
+                value="Terraced">
+              <label class="govuk-label govuk-radios__label" for="property-type-house-3">
+                Terraced
+              </label>
+              <div id="property-type-house-3-hint" class="govuk-hint govuk-radios__hint">
+                Sits in the middle with a house or building on each side
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="property-type-house-3" name="property-type-house" type="radio"
+                value="End terrace">
+              <label class="govuk-label govuk-radios__label" for="property-type-house-3">
+                End terrace
+              </label>
+              <div id="property-type-house-4-hint" class="govuk-hint govuk-radios__hint">
+                Sits at the end of a row of similar houses with one house attached to it
+              </div>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

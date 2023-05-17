@@ -1,0 +1,86 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{csrf_input}}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Are your walls insulated?
+            </h1>
+          </legend>
+          <p class="govuk-body">Cavity walls built before 1991 are typically uninsulated, unless you or someone before
+            you had insulation installed.
+          </p>
+
+          <p class="govuk-body">Cavity walls built after 1991 were typically built with insulating material between the
+            outer and inner walls.
+          </p>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Help me answer this question
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">Homes built after 1991 were typically built with insulating material between the
+                outer and inner walls.</p>
+              <p class="govuk-body">If your home was converted, for example it was a shop or other commercial premises
+                before, it may have been built
+                without insulation.</p>
+            </div>
+          </details>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="kind-of-wall-insulation" name="kind-of-wall-insulation"
+                type="radio" value="Yes they are all insulated">
+              <label class="govuk-label govuk-radios__label" for="kind-of-wall-insulation">
+                Yes they are all insulated
+              </label>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="kind-of-wall-insulation-2" name="kind-of-wall-insulation"
+                type="radio" value="Some are insulated, some are not">
+              <label class="govuk-label govuk-radios__label" for="kind-of-wall-insulation-2">
+                Some are insulated, some are not
+              </label>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="kind-of-wall-insulation-3" name="kind-of-wall-insulation"
+                type="radio" value="No they are not insulated">
+              <label class="govuk-label govuk-radios__label" for="kind-of-wall-insulation-3">
+                No they are not insulated
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="kind-of-wall-insulation-3" name="kind-of-wall-insulation"
+                type="radio" value="I don't know">
+              <label class="govuk-label govuk-radios__label" for="kind-of-wall-insulation-3">
+                I don't know
+              </label>
+            </div>
+
+
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

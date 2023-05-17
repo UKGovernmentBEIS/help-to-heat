@@ -1,0 +1,64 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{csrf_input}}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What kind of property do you have?
+            </h1>
+          </legend>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Why do we need to know this?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">Energy use varies between different buildings, particularly for heating.</p>
+              <p class="govuk-body">Some home improvements are only possible or appropriate for certain buildings.</p>
+            </div>
+          </details>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="household-income" name="household-income" type="radio"
+                value="House">
+              <label class="govuk-label govuk-radios__label" for="household-income">
+                House
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="household-income-2" name="household-income" type="radio"
+                value="Bungalow">
+              <label class="govuk-label govuk-radios__label" for="household-income-2">
+                Bungalow
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="household-income-2" name="household-income" type="radio"
+                value="Apartment, flat or masionette">
+              <label class="govuk-label govuk-radios__label" for="household-income-2">
+                Apartment, flat or masionette
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

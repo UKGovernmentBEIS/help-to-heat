@@ -1,0 +1,51 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{csrf_input}}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-heading-l">
+              What is the address of your property?
+            </h1>
+            <p class="govuk-body">We need this information to find out the following:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>The energy efficiency of your home</li>
+              <li>If you live in an eligible postcode</li>
+            </ul>
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line">
+              Building number or name
+            </label>
+            <div id="address-line-hint" class="govuk-hint">
+              e.g. 19 or Swiss Cottage
+            </div>
+            <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"
+              autocomplete="address-line1">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+              Postcode
+            </label>
+            <div id="address-postcode-hint" class="govuk-hint">
+              e.g AB12 3CD
+            </div>
+            <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text"
+              autocomplete="postal-code">
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

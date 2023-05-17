@@ -1,0 +1,57 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{csrf_input}}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Number of bedrooms
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="property-type-flat" name="property-type-flat" type="radio"
+                value="studio">
+              <label class="govuk-label govuk-radios__label" for="property-type-flat">
+                Studio
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="property-type-flat-2" name="property-type-flat" type="radio"
+                value="one-bedroom">
+              <label class="govuk-label govuk-radios__label" for="property-type-flat-2">
+                One bedroom
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="property-type-flat-3" name="property-type-flat" type="radio"
+                value="two-bedrooms">
+              <label class="govuk-label govuk-radios__label" for="property-type-flat-3">
+                Two bedrooms
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="property-type-flat-3" name="property-type-flat" type="radio"
+                value="three-or-more-bedrooms">
+              <label class="govuk-label govuk-radios__label" for="property-type-flat-3">
+                Three or more bedrooms
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

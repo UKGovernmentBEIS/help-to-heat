@@ -1,0 +1,47 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{csrf_input}}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is your annual household income?
+            </h1>
+          </legend>
+
+          <p class="govuk-body">Your annual household income is the total income before paying tax for all adults living
+            in your home.</p>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="household-income" name="household-income" type="radio" value="31">
+              <label class="govuk-label govuk-radios__label" for="household-income">
+                Less than £31,000 a year
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="household-income-2" name="household-income" type="radio"
+                value="31+">
+              <label class="govuk-label govuk-radios__label" for="household-income-2">
+                £31,000 or more a year
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{csrf_input}}
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">Information based on your answers</h1>
+        <p class="govuk-body">Based on your answers you can access the following:</p>
+      </div>
+
+      <div>
+        <h2 class="govuk-heading-m">
+          <span class="govuk-caption-m">Support from an energy supplier</span>
+          Government schemes available: Great British Insulation scheme, and Energy Company
+          Obligation 4.
+        </h2>
+        <p class="govuk-body">You can create a referral to your home energy supplier to access insulation with this
+          offer.</p>
+        <p class="govuk-body">Your energy supplier will assess your home, tell you what measures are suitable, and tell
+          you how these measures will
+          save energy in your home. They will also determine if you need to make any financial contribution before you
+          decide to
+          install anything.</p>
+      </div>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Create a referral
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

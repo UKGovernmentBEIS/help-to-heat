@@ -1,0 +1,74 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{csrf_input}}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What kind of flat do you have?
+            </h1>
+          </legend>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Why do we need to know this?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">Energy use varies between different buildings, particularly for heating.</p>
+              <p class="govuk-body">Some home improvements are only possible or appropriate for certain buildings.</p>
+            </div>
+          </details>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="property-type-flat" name="property-type-flat" type="radio"
+                value="top-floor">
+              <label class="govuk-label govuk-radios__label" for="property-type-flat">
+                Top floor
+              </label>
+              <div id="property-type-flat-hint" class="govuk-hint govuk-radios__hint">
+                Sits directly below the roof with no other flat above it
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="property-type-flat-2" name="property-type-flat" type="radio"
+                value="middle-floor">
+              <label class="govuk-label govuk-radios__label" for="property-type-flat-2">
+                Middle floor
+              </label>
+              <div id="property-type-flat-2-hint" class="govuk-hint govuk-radios__hint">
+                Has another flat above, and another below
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="property-type-flat-3" name="property-type-flat" type="radio"
+                value="ground-floor">
+              <label class="govuk-label govuk-radios__label" for="property-type-flat-3">
+                Ground floor
+              </label>
+              <div id="property-type-flat-3-hint" class="govuk-hint govuk-radios__hint">
+                The lowest flat in the building with no flat beneath - typically at street level but may be a basement
+              </div>
+            </div>
+
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
