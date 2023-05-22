@@ -4,6 +4,22 @@
 <a href="#" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#agrees">Error message</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <form method="POST">
       {{csrf_input}}
       <div class="govuk-form-group">
@@ -92,20 +108,24 @@
         </dl>
       </div>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="agrees-hint">
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <p id="agrees-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Error message
+            </p>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british"
-                aria-describedby="nationality-item-hint">
-              <label class="govuk-label govuk-checkboxes__label" for="nationality">
+              <input class="govuk-checkboxes__input" id="agrees" name="agrees" type="checkbox" value="british"
+                aria-describedby="agrees-item-hint">
+
+              <label class="govuk-label govuk-checkboxes__label" for="agrees">
                 I agree for my details to be shared with energy suppliers and / or their delivery partners, as well as
                 other government
                 departments, to see if I qualify for the Energy Company Obligation (ECO4) scheme and / or The Great
                 British Energy
                 Scheme (GBIS) and, for any relevant services to be delivered.
               </label>
-              <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              <div id="agrees-item-hint" class="govuk-hint govuk-checkboxes__hint">
                 <a class="govuk-link" href="#">Further information on our GDPR UK Privacy Policy.</a>
               </div>
             </div>

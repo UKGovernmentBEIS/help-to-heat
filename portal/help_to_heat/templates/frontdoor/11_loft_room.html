@@ -1,0 +1,64 @@
+{% extends "frontdoor/base.html" %}
+
+{% block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST">
+      {{csrf_input}}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do you have a loft that hasn’t been converted into a room?
+            </h1>
+          </legend>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Help me answer this question
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">A loft is an unheated space without walls and ceilings, immediately beneath the
+                pitched roof. You will usually be able
+                to see the roof timbers.</p>
+
+              <p class="govuk-body">If all the space under your pitched roof, or nearly all the space, is used as living
+                space with finished walls and
+                ceilings then the loft has been converted into a room.</p>
+            </div>
+          </details>
+
+          <div class="govuk-inset-text">
+            Homes of your type typically do not have a loft.
+          </div>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="loft" name="loft" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="loft">
+                Yes, I have a loft that hasn't been converted into a room
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="loft-2" name="loft" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="loft-2">
+                No, I don’t have a loft or my loft has been converted into a room
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
