@@ -2,31 +2,13 @@
 {% import "macros.html" as macros with context %}
 
 {% block content %}
-  {% call macros.form_wrapper(prev_url, button_label="Submit") -%}
-    <h1 class="govuk-heading-l">Confirm and submit</h1>
-    {{macros.details_summary(summary_lines)}}
+{% call macros.form_wrapper(prev_url, button_label="Submit") -%}
+<h1 class="govuk-heading-l">Check your answers</h1>
 
-    
-      {% if errors.get('permission') %}
-        <p id="permission-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> {{errors.get('permission')}}
-        </p>
-      {% endif %}
+<p class="govuk-body">Please review the information we have gathered. You can still change your answers if anything
+  looks wrong.</p>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="permission-hint">
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="permission" name="permission" type="checkbox" aria-describedby="permission-item-hint">
-              <label class="govuk-label govuk-checkboxes__label" for="permission">
-                I agree for my details to be shared with energy suppliers and / or their delivery partners, as well as other government departments, to see if I qualify for the Energy Company Obligation (ECO4) scheme and/or The Great British Energy Scheme (GBIS) and for any relevant services to be delivered.
-              </label>
-              <div id="permission-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                <a class="govuk-link" href="#">Further information on our GDPR UK Privacy Policy.</a>
-              </div>
-            </div>
-          </div>
-        </fieldset>
-    </div>
-  {%- endcall %}
+{{macros.details_summary(summary_lines)}}
+
+{%- endcall %}
 {% endblock %}
