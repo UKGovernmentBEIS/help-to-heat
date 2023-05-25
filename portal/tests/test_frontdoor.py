@@ -118,7 +118,7 @@ def _answer_house_questions(page, session_id, benefits_answer):
     assert page.has_one("h1:contains('What kind of property do you have?')")
     page = _check_page(page, "property-type", "property_type", "House")
 
-    assert page.has_one("h1:contains('Number of bedrooms')")
+    assert page.has_one("h1:contains('How many bedrooms does the property have?')")
     page = _check_page(page, "number-of-bedrooms", "number_of_bedrooms", "Two bedrooms")
 
     assert page.has_one("h1:contains('What kind of walls does your property have?')")
