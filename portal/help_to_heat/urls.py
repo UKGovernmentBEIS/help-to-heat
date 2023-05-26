@@ -18,4 +18,5 @@ else:
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(api_patterns)),
+    re_path(r'^robots\.txt$', serve, {'document_root': settings.STATIC_ROOT, 'path': "robots.txt"}),
 ] + urlpatterns
