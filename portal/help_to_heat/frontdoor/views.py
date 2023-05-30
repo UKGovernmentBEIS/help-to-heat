@@ -207,7 +207,7 @@ class EpcFoundView(PageView):
         address = session_data.get("address")
         epc_rating = interface.api.epc.get_epc(uprn)
         context = {
-            "epc_rating": epc_rating["rating"],
+            "epc_rating": epc_rating.get("rating", "B"),  # TODO: Remove default value once not_found path is populated
             "epc_found_options": schemas.epc_found_options,
             "address": address,
         }
