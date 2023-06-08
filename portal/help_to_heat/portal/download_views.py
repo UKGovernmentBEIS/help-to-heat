@@ -79,7 +79,7 @@ def add_extra_row_data(row):
     row = {
         **row,
         "ECO4": "Energy Company Obligation 4" in eligibility,
-        "GBIS": "Great British Insulation scheme" in eligibility,
+        "GBIS": "Great British Insulation Scheme" in eligibility,
         "epc_day": epc_date and epc_date.day or "",
         "epc_month": epc_date and epc_date.month or "",
         "epc_year": epc_date and epc_date.year or "",

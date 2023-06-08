@@ -1,10 +1,10 @@
 from help_to_heat.frontdoor.eligibility import calculate_eligibility
 
 result_map = {
-    "GBIS": ("Great British Insulation scheme",),
+    "GBIS": ("Great British Insulation Scheme",),
     "ECO4": ("Energy Company Obligation 4",),
     "NONE": (),
-    "BOTH": ("Great British Insulation scheme", "Energy Company Obligation 4"),
+    "BOTH": ("Great British Insulation Scheme", "Energy Company Obligation 4"),
 }
 
 scenarios = (

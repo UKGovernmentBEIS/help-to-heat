@@ -274,5 +274,5 @@ class SessionSchema(Schema):
 
 schemes_map = {
     "ECO4": "Energy Company Obligation 4",
-    "GBIS": "Great British Insulation scheme",
+    "GBIS": "Great British Insulation Scheme",
 }
