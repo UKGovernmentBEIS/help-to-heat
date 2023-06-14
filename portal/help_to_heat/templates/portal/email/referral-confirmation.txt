@@ -1,6 +1,8 @@
-Hi,
+# Your details have been submitted to {{supplier_name}}
 
-Your details have been submitted to {{supplier_name}}.
+If you provided an email address in your referral then we have sent you a confirmation email.
+
+You can save or print a copy of your referral.
 
 # What happens next?
 
@@ -14,7 +16,7 @@ Properties that are applicable for home improvements must have a home survey com
 
 # Contacting the energy supplier about your referral after X working days
 
-You can [find contact details for the energy supplier (opens in new tab)]() if you need to contact them.
+You can find contact details for the energy supplier (opens in new tab) if you need to contact them.
 
 You do not need to contact the energy supplier unless it has been more than X working days since you submitted the referral and you have not yet received a confirmation email from them.
 
