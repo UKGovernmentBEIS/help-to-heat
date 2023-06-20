@@ -630,7 +630,7 @@ def test_referral_email():
     page = form.submit().follow()
 
     assert page.has_one("h1:contains('Confirm and submit')")
-    assert page.has_text("I agree for my personal details to be shared with Octopus")
+    assert page.has_text("I agree for my personal details to be shared with the energy supplier I selected")
 
     form = page.get_form()
     page = form.submit()
