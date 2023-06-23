@@ -98,15 +98,15 @@ class User(BaseUser, utils.UUIDPrimaryKeyBase):
 
     @property
     def is_service_manager(self):
-        return self.role == "service-manager"
+        return self.role == "SERVICE_MANAGER"
 
     @property
     def is_team_leader(self):
-        return self.role == "team-leader"
+        return self.role == "TEAM_LEADER"
 
     @property
     def is_team_member(self):
-        return self.role == "team-member"
+        return self.role == "TEAM_MEMBER"
 
 
 class ReferralDownload(utils.UUIDPrimaryKeyBase, utils.TimeStampedModel):
